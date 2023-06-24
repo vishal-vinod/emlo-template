@@ -22,3 +22,14 @@ The latest checkpoint is saved as `./save.ckpt`
 ```
 silver_eval data.num_workers=16 ckpt_path="./save.ckpt"
 ```
+
+### To train with TIMM
+```
+silver_train model="timm.yaml" 
+```
+The latest checkpoint is saved as `./save.ckpt`
+
+### To evaluate with TIMM
+```
+silver_eval model="timm.yaml" ckpt_path="./save.ckpt"
+```

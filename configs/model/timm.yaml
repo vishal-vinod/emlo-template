@@ -14,7 +14,7 @@ scheduler:
   patience: 10
 
 net:
-  _target_: timm.create_model('resnet18', pretrained=True)
-  num_labels: 10
-  ignore_mismatched_sizes: True
-  pretrained_model_name_or_path: "microsoft/resnet-18"
+  _target_: timm.create_model
+  model_name: 'resnet18'
+  pretrained: True
+  num_classes: 10

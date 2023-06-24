@@ -43,7 +43,7 @@ class TIMMLitModule(LightningModule):
         if x.shape[1] == 1:
             x = repeat(x, "b c h w -> b (repeat c) h w", repeat=3)
 
-        return self.net(pixel_values=x).logits
+        return self.net(x)#.logits
 
     def on_train_start(self):
         # by default lightning executes validation step sanity checks before training starts,
