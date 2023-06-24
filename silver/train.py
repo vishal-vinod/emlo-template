@@ -54,6 +54,8 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
     # merge train and test metrics
     metric_dict = {**train_metrics, **test_metrics}
 
+    trainer.save_checkpoint("./save.ckpt")
+
     return metric_dict, object_dict
 
 

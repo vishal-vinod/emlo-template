@@ -23,7 +23,7 @@ test: True
 compile: False
 
 # simply provide checkpoint path to resume training
-ckpt_path: "./"
+ckpt_path: "./save.pth"
 
 # seed for random number generators in pytorch, numpy and python.random
 seed: null

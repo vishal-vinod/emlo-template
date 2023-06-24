@@ -37,7 +37,7 @@ class CIFAR10DataModule(LightningDataModule):
     def __init__(
         self,
         data_dir: str = "data/",
-        train_val_test_split: Tuple[int, int, int] = (55_000, 5_000, 10_000),
+        train_val_test_split: Tuple[int, int, int] = (45_000, 5_000, 10_000),
         batch_size: int = 64,
         num_workers: int = 0,
         pin_memory: bool = False,
@@ -83,6 +83,7 @@ class CIFAR10DataModule(LightningDataModule):
             testset = CIFAR10(self.hparams.data_dir, train=False,
                             transform=self.transforms)
             dataset = ConcatDataset(datasets=[trainset, testset])
+            print("Length of dataset: ", len(dataset))
             self.data_train, self.data_val, self.data_test = random_split(
                 dataset=dataset,
                 lengths=self.hparams.train_val_test_split,
